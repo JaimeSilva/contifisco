@@ -1,0 +1,269 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 1254 1254"
+     width="1254"
+     height="1254"
+     role="img"
+     aria-label="Glow animado de alto impacto para o símbolo Contifisco">
+  <defs>
+    <radialGradient id="ambient" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#087cff" stop-opacity=".46"/>
+      <stop offset=".38" stop-color="#0568f3" stop-opacity=".18"/>
+      <stop offset="1" stop-color="#005ce8" stop-opacity="0"/>
+    </radialGradient>
+
+    <linearGradient id="edgeLight" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#5ab7ff" stop-opacity="0"/>
+      <stop offset=".40" stop-color="#9bd8ff" stop-opacity=".52"/>
+      <stop offset=".52" stop-color="#fff"/>
+      <stop offset=".64" stop-color="#66baff" stop-opacity=".48"/>
+      <stop offset="1" stop-color="#258aff" stop-opacity="0"/>
+    </linearGradient>
+
+    <filter id="blurLarge" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="30"/>
+    </filter>
+    <filter id="blurMedium" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="12"/>
+    </filter>
+    <filter id="beamGlow" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="sparkGlow" x="-500%" y="-500%" width="1000%" height="1000%">
+      <feGaussianBlur stdDeviation="7" result="wide"/>
+      <feGaussianBlur stdDeviation="2" result="near"/>
+      <feMerge>
+        <feMergeNode in="wide"/>
+        <feMergeNode in="near"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="symbolClip">
+      <path d="M835 162 L355 344
+               C257 382 218 456 244 553
+               L349 879
+               C365 931 401 979 420 1061
+               L874 872
+               C982 830 1034 745 1009 646
+               L835 162Z"/>
+      <ellipse cx="718" cy="769" rx="150" ry="152"/>
+    </clipPath>
+
+    <style>
+      .ambient {
+        transform-origin: 617px 643px;
+        animation: breathe 6.8s ease-in-out infinite;
+        mix-blend-mode: screen;
+      }
+      .outer-aura,
+      .orb-aura {
+        fill: none;
+        stroke: #1687ff;
+        stroke-linecap: round;
+        filter: url(#blurMedium);
+        animation: aura 6.8s ease-in-out infinite;
+      }
+      .outer-aura { stroke-width: 8; opacity: .07; }
+      .orb-aura {
+        stroke-width: 7;
+        opacity: .06;
+        animation-delay: -2.1s;
+      }
+      .beam {
+        fill: none;
+        stroke: url(#edgeLight);
+        stroke-width: 3;
+        stroke-linecap: round;
+        filter: url(#beamGlow);
+        stroke-dasharray: 135 810;
+        animation: travel 8s ease-in-out infinite;
+      }
+      .orb-shimmer {
+        fill: none;
+        stroke: url(#edgeLight);
+        stroke-width: 2.5;
+        stroke-linecap: round;
+        stroke-dasharray: 90 860;
+        filter: url(#beamGlow);
+        animation: orbit 9.5s ease-in-out infinite;
+      }
+      .energy-ring {
+        fill: none;
+        stroke: #69c8ff;
+        stroke-width: 3;
+        stroke-linecap: round;
+        stroke-dasharray: 42 22 7 29;
+        opacity: .42;
+        filter: url(#beamGlow);
+        transform-origin: 718px 769px;
+        animation: spin 13s linear infinite, ring-pulse 4.6s ease-in-out infinite;
+      }
+      .scan {
+        fill: url(#edgeLight);
+        opacity: 0;
+        mix-blend-mode: screen;
+        filter: url(#blurMedium);
+        animation: scan 7.8s ease-in-out infinite;
+      }
+      .secondary-beam {
+        fill: none;
+        stroke: url(#edgeLight);
+        stroke-width: 2.6;
+        stroke-linecap: round;
+        stroke-dasharray: 105 730;
+        filter: url(#beamGlow);
+        animation: secondary-travel 8s ease-in-out infinite;
+      }
+      .spark {
+        fill: #d9f4ff;
+        filter: url(#sparkGlow);
+        transform-box: fill-box;
+        transform-origin: center;
+        animation: spark 6.4s ease-in-out infinite;
+      }
+      .spark.s2 { animation-delay: -2.2s; animation-duration: 7.1s; }
+      .spark.s3 { animation-delay: -4.6s; animation-duration: 8.2s; }
+      .spark.s4 { animation-delay: -1.1s; animation-duration: 7.8s; }
+
+      @keyframes breathe {
+        0%, 100% { opacity: .015; transform: scale(.97); }
+        50% { opacity: .075; transform: scale(1.035); }
+      }
+      @keyframes aura {
+        0%, 100% { opacity: .035; stroke-width: 6; }
+        50% { opacity: .15; stroke-width: 11; }
+      }
+      @keyframes travel {
+        0%, 14% { stroke-dashoffset: 945; opacity: 0; }
+        22% { opacity: .25; }
+        43% { opacity: .95; }
+        62% { opacity: .18; }
+        70%, 100% { stroke-dashoffset: 0; opacity: 0; }
+      }
+      @keyframes orbit {
+        0%, 12% { stroke-dashoffset: 950; opacity: 0; }
+        22% { opacity: .75; }
+        58% { opacity: .38; }
+        72%, 100% { stroke-dashoffset: 0; opacity: 0; }
+      }
+      @keyframes spin {
+        to { transform: rotate(360deg); }
+      }
+      @keyframes ring-pulse {
+        0%, 100% { opacity: .18; stroke-width: 2; }
+        50% { opacity: .72; stroke-width: 3.5; }
+      }
+      @keyframes scan {
+        0%, 12% { opacity: 0; transform: translate(-680px, 330px) rotate(-18deg); }
+        20% { opacity: .08; }
+        43% { opacity: .34; }
+        64% { opacity: .08; }
+        72%, 100% { opacity: 0; transform: translate(720px, -350px) rotate(-18deg); }
+      }
+      @keyframes secondary-travel {
+        0%, 44% { stroke-dashoffset: 835; opacity: 0; }
+        52% { opacity: .20; }
+        69% { opacity: .9; }
+        82% { opacity: .12; }
+        89%, 100% { stroke-dashoffset: 0; opacity: 0; }
+      }
+      @keyframes spark {
+        0%, 69%, 100% { opacity: 0; transform: scale(.45); }
+        74% { opacity: .30; transform: scale(.8); }
+        78% { opacity: 1; transform: scale(1.9); }
+        83% { opacity: .18; transform: scale(.65); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ambient, .outer-aura, .orb-aura, .beam, .orb-shimmer,
+        .energy-ring, .scan, .secondary-beam, .spark {
+          animation: none;
+        }
+        .beam, .orb-shimmer, .scan, .secondary-beam, .spark { display: none; }
+      }
+    </style>
+  </defs>
+
+  <!-- O fundo deste SVG é totalmente transparente. -->
+
+  <!-- Luz ambiente que respira atrás da zona central do símbolo. -->
+  <ellipse class="ambient"
+           cx="612"
+           cy="642"
+           rx="350"
+           ry="330"
+           fill="url(#ambient)"
+           filter="url(#blurLarge)"/>
+
+  <!-- Varrimento diagonal confinado à silhueta do símbolo. -->
+  <g clip-path="url(#symbolClip)">
+    <rect class="scan"
+          x="470"
+          y="80"
+          width="105"
+          height="1180"
+          transform="rotate(-18 522 670)"/>
+  </g>
+
+  <!-- Aura difusa alinhada com a silhueta exterior. -->
+  <path class="outer-aura"
+        d="M835 162
+           L355 344
+           C257 382 218 456 244 553
+           L349 879
+           M379 947
+           L420 1061
+           L874 872
+           C982 830 1034 745 1009 646
+           L835 162"/>
+
+  <!-- Aura do elemento circular central. -->
+  <ellipse class="orb-aura"
+           cx="718"
+           cy="769"
+           rx="148"
+           ry="150"/>
+
+  <!-- Feixe curto a percorrer a aresta superior e a curva esquerda. -->
+  <path class="beam"
+        pathLength="945"
+        d="M835 162
+           L355 344
+           C257 382 218 456 244 553
+           L349 879"/>
+
+  <!-- Pequeno reflexo que circula ocasionalmente no elemento redondo. -->
+  <ellipse class="orb-shimmer"
+           pathLength="950"
+           cx="718"
+           cy="769"
+           rx="148"
+           ry="150"/>
+
+  <!-- Segundo feixe, atrasado, na dobra inferior. -->
+  <path class="secondary-beam"
+        pathLength="835"
+        d="M379 947
+           L420 1061
+           L874 872
+           C949 842 999 789 1012 722"/>
+
+  <!-- Anel energético ligeiramente exterior ao círculo. -->
+  <ellipse class="energy-ring"
+           pathLength="1000"
+           cx="718"
+           cy="769"
+           rx="163"
+           ry="165"/>
+
+  <!-- Faíscas curtas em pontos estruturais do símbolo. -->
+  <g aria-hidden="true">
+    <circle class="spark" cx="835" cy="162" r="3.2"/>
+    <circle class="spark s2" cx="244" cy="553" r="3"/>
+    <circle class="spark s3" cx="420" cy="1061" r="3.4"/>
+    <circle class="spark s4" cx="874" cy="872" r="3.1"/>
+  </g>
+</svg>

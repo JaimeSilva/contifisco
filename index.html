@@ -1,12 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contifisco</title>
-</head>
-<body>
-    <h1>Contifisco</h1>
-    <p>Site em construção.</p>
-</body>
+    <meta
+      name="description"
+      content="Desde 1983, a Contifisco acompanha empresas e particulares na Madeira com dedicação, rigor e proximidade."
+    >
+    <meta name="theme-color" content="#000319">
+    <title>Contifisco | Gabinete Técnico de Contabilidade e Fiscalidade</title>
+    <link rel="icon" type="image/png" href="./assets/favicon.png">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main class="landing">
+      <header class="topbar">
+        <img src="./assets/logo.png" alt="Contifisco">
+        <p>Gabinete Técnico de Contabilidade e Fiscalidade</p>
+      </header>
+
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="overline">DESDE 1983 · FUNCHAL, MADEIRA</p>
+          <h1>
+            Desde sempre a fazer da contabilidade o seu parceiro mais
+            <span>credível.</span>
+          </h1>
+        </div>
+
+        <div class="hero-art" aria-hidden="true">
+          <!-- <img class="hero-art-overlay" src="./assets/anime.svg" alt=""> -->
+          <img class="hero-art-base" src="./assets/Contifisco.png" alt="">
+        </div>
+      </section>
+
+      <address class="contact-bar">
+        <a href="tel:+351291237548">
+          <small>Telefone</small>
+          <strong>+351 291 237 548</strong>
+        </a>
+        <a href="mailto:contifisco@hotmail.com">
+          <small>E-mail</small>
+          <strong>contifisco@hotmail.com</strong>
+        </a>
+        <a
+          href="https://maps.google.com/?q=Rua+das+Hortas+1+Funchal+9050-024"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <small>Morada</small>
+          <strong>Rua das Hortas, n.º 1, 3.º, sala 302 · Funchal</strong>
+        </a>
+        <div class="contact-item hours" aria-label="Horário de funcionamento">
+          <small>Horário</small>
+          <strong>Seg-qui: 09:00-13:00 · 14:30-18:30</strong>
+          <strong>Sex: 09:00-13:00 · 14:30-17:30</strong>
+          <strong>Sáb-dom: Encerrado</strong>
+        </div>
+      </address>
+
+      <a
+        class="facebook"
+        href="https://www.facebook.com/contifisco.contabilidadefunchal/"
+        target="_blank"
+        rel="noreferrer"
+        aria-label="Contifisco no Facebook"
+      >
+        <span>f</span>
+      </a>
+
+      <p class="site-year">&copy; <span id="current-year">2026</span> Contifisco</p>
+    </main>
+
+    <script>
+      document.getElementById("current-year").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>
